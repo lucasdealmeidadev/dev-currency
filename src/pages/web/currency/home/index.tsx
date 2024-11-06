@@ -1,12 +1,33 @@
+import { useRef, type FormEvent } from 'react'
 import styles from './home.module.css'
 import { BsSearch } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function Home() {
+  const navigate = useNavigate()
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    if (inputRef.current?.value) {
+      const { value } = inputRef.current
+      navigate(`/detail/${value}`)
+    }
+  }
+
+  const handleGetMore = async () => {
+    alert('teste')
+  }
+
   return (
     <main className={styles.container}>
-      <form action="" className={styles.form}>
-        <input type="text" placeholder="Digite o nome da moeda... Ex: beeb" />
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          placeholder="Digite o nome da moeda... Ex: beeb"
+          ref={inputRef}
+        />
 
         <button type="submit">
           <BsSearch size={30} color="#fff" />
@@ -68,6 +89,14 @@ export function Home() {
           </tr>
         </tbody>
       </table>
+
+      <button
+        type="button"
+        className={styles.buttonMore}
+        onClick={handleGetMore}
+      >
+        Carregar mais
+      </button>
     </main>
   )
 }
