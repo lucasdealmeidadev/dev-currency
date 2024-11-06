@@ -41,7 +41,28 @@ export function Home() {
             <td className={styles.tdLabel} data-label="Volume">
               2B
             </td>
-            <td className={styles.tdLabel} data-label="Mudança 24h">
+            <td className={styles.tdProfit} data-label="Mudança 24h">
+              <span>1.20</span>
+            </td>
+          </tr>
+          <tr className={styles.tr}>
+            <td className={styles.tdLabel} data-label="Moeda">
+              <div className={styles.name}>
+                <Link to={'/detail/bitcoin'}>
+                  <span>Bitcoin</span> | BTC
+                </Link>
+              </div>
+            </td>
+            <td className={styles.tdLabel} data-label="Valor Mercado">
+              1T
+            </td>
+            <td className={styles.tdLabel} data-label="Preço">
+              8.000
+            </td>
+            <td className={styles.tdLabel} data-label="Volume">
+              2B
+            </td>
+            <td className={styles.tdProfit} data-label="Mudança 24h">
               <span>1.20</span>
             </td>
           </tr>
