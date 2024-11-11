@@ -1,11 +1,26 @@
-import { useRef, type FormEvent } from 'react'
-import styles from './home.module.css'
+import type { CoinProps } from '@/types/coin'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
+import styles from './home.module.css'
 
 export function Home() {
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
+  const [coins, setCoins] = useState<CoinProps[]>([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch(
+        'https://api.coincap.io/v2/assets?limit=10&offset=0'
+      )
+      const { data } = await response.json()
+
+      console.log(data)
+    }
+
+    getData()
+  }, [])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -25,7 +40,7 @@ export function Home() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
-          placeholder="Digite o nome da moeda... Ex: beeb"
+          placeholder="Digite o nome da moeda... Ex: Bitcoin"
           ref={inputRef}
         />
 
