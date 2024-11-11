@@ -10,18 +10,19 @@ export function Home() {
   const navigate = useNavigate()
   const inputRef = useRef<HTMLInputElement>(null)
   const [coins, setCoins] = useState<CoinProps[]>([])
+  const [offset, setOffset] = useState<number>(0)
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await fetch(
-        'https://api.coincap.io/v2/assets?limit=10&offset=0'
-      )
-      const { data } = await response.json()
-      setCoins(data)
-    }
-
     getData()
-  }, [])
+  }, [offset])
+
+  const getData = async () => {
+    const response = await fetch(
+      `https://api.coincap.io/v2/assets?limit=10&offset=${offset}`
+    )
+    const { data } = await response.json()
+    setCoins([...coins, ...data])
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -33,7 +34,12 @@ export function Home() {
   }
 
   const handleGetMore = async () => {
-    alert('teste')
+    if (offset === 0) {
+      setOffset(10)
+      return
+    }
+
+    setOffset(offset + 10)
   }
 
   return (
