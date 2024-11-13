@@ -24,7 +24,7 @@ export function Home() {
       return lastPage.length ? allPages.length * 10 : undefined
     },
     select: data => data.pages.flat(),
-    staleTime: 1000 * 60, // 60 seconds
+    staleTime: 1000 * 60 * 3, // 3 minutos
   })
 
   return (

@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/detail/:currency',
+        path: '/detail/:id',
         element: <Detail />,
       },
       {
