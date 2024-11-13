@@ -1,0 +1,49 @@
+.detail {
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  align-items: center;
+  justify-content: normal;
+  gap: 50px;
+
+  div:nth-child(1) {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+
+    img {
+      width: 90px;
+      height: 90px;
+      transition: all 1s;
+    }
+
+    img:hover {
+      transform: scale(1.2);
+      z-index: 99;
+    }
+  }
+
+  div:nth-child(2) {
+    line-height: 2;
+    text-align: left;
+
+    span {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}
+
+.isLoading,
+.emptyData {
+  text-align: center;
+  padding-top: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+}

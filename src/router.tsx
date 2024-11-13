@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import { Home } from '@pages/web/currency/home'
-import { Detail } from '@pages/web/currency/datail'
+import { Detail } from '@/pages/web/currency/detail'
 import { NotFound } from '@pages/web/not-found'
 import { Layout } from '@/components/layout'
 
