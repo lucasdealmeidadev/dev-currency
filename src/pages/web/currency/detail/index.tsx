@@ -6,11 +6,12 @@ import { formatedPriceUsdCompact } from '@/utils/functions/formated-price-compac
 import { formatedPriceUsd } from '@/utils/functions/formated-price-usd'
 
 export function Detail() {
-  const { id } = useParams<{ id: string }>()
+  const params = useParams<{ id: string }>()
+  const id = params?.id?.toLocaleLowerCase() as string
 
   const { data, isLoading } = useQuery({
     queryKey: [`coin-${id}`],
-    queryFn: () => getCoinById(id as string),
+    queryFn: () => getCoinById(id),
     staleTime: 1000 * 60 * 3, // 3 minutos
   })
 
