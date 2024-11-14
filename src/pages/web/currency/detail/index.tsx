@@ -7,7 +7,7 @@ import { formatedPriceUsd } from '@/utils/functions/formated-price-usd'
 
 export function Detail() {
   const { id } = useParams<{ id: string }>()
-  const search = id?.toLocaleLowerCase() as string
+  const search = id?.toLowerCase() as string
 
   const { data, isLoading } = useQuery({
     queryKey: [`coin-${search}`],
@@ -34,7 +34,7 @@ export function Detail() {
 
       <div>
         <p>
-          <span>Moeda</span> {data?.name}
+          <span>Moeda</span> {data?.name} | {data?.symbol}
         </p>
         <p>
           <span>Valor de Mercado: </span>{' '}
@@ -48,7 +48,13 @@ export function Detail() {
           <span>Volume: </span>
           {formatedPriceUsdCompact(data?.volumeUsd24Hr as string)}
         </p>
-        <p>
+        <p
+          className={
+            Number(data?.changePercent24Hr) > 0
+              ? styles.tdProfit
+              : styles.tdLoss
+          }
+        >
           <span>Mudança 24H: </span>
           {Number(data?.changePercent24Hr).toFixed(5)}
         </p>
