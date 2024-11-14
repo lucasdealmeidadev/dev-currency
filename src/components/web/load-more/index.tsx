@@ -2,7 +2,6 @@ import type {
   FetchNextPageOptions,
   InfiniteQueryObserverResult,
 } from '@tanstack/react-query'
-import styles from './load-more.module.css'
 import type { CoinProps } from '@/types/coin'
 
 type LoadMoreProps = {
@@ -21,7 +20,7 @@ export function LoadMore({
   return (
     <button
       type="button"
-      className={styles.buttonMore}
+      className="bg-cyan-500 px-8 py-2 rounded-lg text-white my-4 duration-200 hover:bg-opacity-85"
       onClick={() => fetchNextPage()}
       disabled={!hasNextPage || isFetchingNextPage}
     >

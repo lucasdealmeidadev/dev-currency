@@ -4,7 +4,6 @@ import { Table } from '@/components/web/table'
 import { TableRoot } from '@/components/web/table-root'
 import { getCoins } from '@/http/get-coins'
 import { useInfiniteQuery } from '@tanstack/react-query'
-import styles from './home.module.css'
 
 export function Home() {
   const {
@@ -28,7 +27,7 @@ export function Home() {
   })
 
   return (
-    <main className={styles.container}>
+    <main>
       <FormSearch />
       <TableRoot isLoading={isLoading}>
         <Table data={data} />

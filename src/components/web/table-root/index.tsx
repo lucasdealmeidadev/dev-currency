@@ -9,7 +9,11 @@ type TableRootProps = {
 export function TableRoot({ children, isLoading }: TableRootProps) {
   return (
     <>
-      {isLoading ? <p className={styles.isLoading}>Carregando...</p> : children}
+      {isLoading ? (
+        <p className="text-zinc-700 text-center mt-7">Carregando...</p>
+      ) : (
+        children
+      )}
     </>
   )
 }
