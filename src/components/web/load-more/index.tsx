@@ -1,8 +1,9 @@
+import type { CoinProps } from '@/types/coin'
+import { Loading } from '@components/web/loading'
 import type {
   FetchNextPageOptions,
   InfiniteQueryObserverResult,
 } from '@tanstack/react-query'
-import type { CoinProps } from '@/types/coin'
 
 type LoadMoreProps = {
   fetchNextPage: (
@@ -24,11 +25,13 @@ export function LoadMore({
       onClick={() => fetchNextPage()}
       disabled={!hasNextPage || isFetchingNextPage}
     >
-      {isFetchingNextPage
-        ? 'Carregando...'
-        : hasNextPage
-          ? 'Carregar mais'
-          : 'Nada mais para carregar'}
+      {isFetchingNextPage ? (
+        <Loading />
+      ) : hasNextPage ? (
+        'Carregar mais'
+      ) : (
+        'Nada mais para carregar'
+      )}
     </button>
   )
 }

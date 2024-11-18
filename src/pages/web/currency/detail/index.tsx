@@ -1,3 +1,4 @@
+import { Loading } from '@/components/web/loading'
 import { getCoinById } from '@/http/get-coin-by-id'
 import { formatedPriceUsdCompact } from '@/utils/functions/formated-price-compact'
 import { formatedPriceUsd } from '@/utils/functions/formated-price-usd'
@@ -16,8 +17,8 @@ export function Detail() {
 
   if (isLoading) {
     return (
-      <div className="grid place-items-center max-w-2xl h-[calc(100vh-96px)] mx-auto">
-        <p className="text-center text-zinc-700 pt-4 text-lg">Carregando...</p>
+      <div className="grid place-items-center max-w-2xl h-[calc(100vh-137px)] mx-auto">
+        <Loading size={45} />
       </div>
     )
   }
@@ -43,7 +44,7 @@ export function Detail() {
           />
         </div>
 
-        <div className="pl-5 text-xl leading-relaxed">
+        <div className="pl-5 text-xl leading-relaxed text-zinc-800">
           <p>
             <span className="font-semibold">Moeda:</span> {data?.name} |{' '}
             {data?.symbol}
