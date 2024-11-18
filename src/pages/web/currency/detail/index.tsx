@@ -1,9 +1,8 @@
 import { getCoinById } from '@/http/get-coin-by-id'
-import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router-dom'
-import styles from './detail.module.css'
 import { formatedPriceUsdCompact } from '@/utils/functions/formated-price-compact'
 import { formatedPriceUsd } from '@/utils/functions/formated-price-usd'
+import { useQuery } from '@tanstack/react-query'
+import { useParams } from 'react-router-dom'
 
 export function Detail() {
   const { id } = useParams<{ id: string }>()
@@ -16,48 +15,62 @@ export function Detail() {
   })
 
   if (isLoading) {
-    return <p className={styles.isLoading}>Carregando...</p>
+    return (
+      <div className="grid place-items-center max-w-2xl h-[calc(100vh-96px)] mx-auto">
+        <p className="text-center text-zinc-700 pt-4 text-lg">Carregando...</p>
+      </div>
+    )
   }
 
   if (!data) {
-    return <p className={styles.emptyData}>Nenhum dado encontrado (;</p>
+    return (
+      <div className="grid place-items-center max-w-2xl h-[calc(100vh-96px)] mx-auto">
+        <p className="text-center text-zinc-700 pt-4 text-lg">
+          Nenhum dado encontrado (;
+        </p>
+      </div>
+    )
   }
 
   return (
-    <div className={styles.detail}>
-      <div>
-        <img
-          src={`https://assets.coincap.io/assets/icons/${data?.symbol?.toLocaleLowerCase()}@2x.png`}
-          alt={`Logo ${data?.name}`}
-        />
-      </div>
+    <div className="grid place-items-center max-w-2xl h-[calc(100vh-96px)] mx-auto">
+      <div className="flex flex-col bg-white rounded-lg shadow-md sm:rounded-lg gap-24 py-10 w-full">
+        <div className="flex justify-center items-center">
+          <img
+            src={`https://assets.coincap.io/assets/icons/${data?.symbol?.toLocaleLowerCase()}@2x.png`}
+            alt={`Logo ${data?.name}`}
+            className="w-24 h-24"
+          />
+        </div>
 
-      <div>
-        <p>
-          <span>Moeda</span> {data?.name} | {data?.symbol}
-        </p>
-        <p>
-          <span>Valor de Mercado: </span>{' '}
-          {formatedPriceUsdCompact(data?.marketCapUsd as string)}
-        </p>
-        <p>
-          <span>Preço: </span>
-          {formatedPriceUsd(data?.priceUsd as string)}
-        </p>
-        <p>
-          <span>Volume: </span>
-          {formatedPriceUsdCompact(data?.volumeUsd24Hr as string)}
-        </p>
-        <p
-          className={
-            Number(data?.changePercent24Hr) > 0
-              ? styles.tdProfit
-              : styles.tdLoss
-          }
-        >
-          <span>Mudança 24H: </span>
-          {Number(data?.changePercent24Hr).toFixed(5)}
-        </p>
+        <div className="pl-5 text-xl leading-relaxed">
+          <p>
+            <span className="font-semibold">Moeda:</span> {data?.name} |{' '}
+            {data?.symbol}
+          </p>
+          <p>
+            <span className="font-semibold">Valor de Mercado: </span>{' '}
+            {formatedPriceUsdCompact(data?.marketCapUsd as string)}
+          </p>
+          <p>
+            <span className="font-semibold">Preço: </span>
+            {formatedPriceUsd(data?.priceUsd as string)}
+          </p>
+          <p>
+            <span className="font-semibold">Volume: </span>
+            {formatedPriceUsdCompact(data?.volumeUsd24Hr as string)}
+          </p>
+          <p
+            className={`font-semibold ${
+              Number(data?.changePercent24Hr) > 0
+                ? 'text-green-600'
+                : 'text-red-600'
+            }`}
+          >
+            <span className="font-bold">Mudança 24H: </span>
+            {Number(data?.changePercent24Hr).toFixed(5)}
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import styles from './table-root.module.css'
 
 type TableRootProps = {
   children: ReactNode
