@@ -1,5 +1,5 @@
 import type { CoinProps } from '@/types/coin'
-import { Loading } from '@components/web/loading'
+import { Loading } from '@/components/ui/loading'
 import type {
   FetchNextPageOptions,
   InfiniteQueryObserverResult,

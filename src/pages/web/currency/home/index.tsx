@@ -27,7 +27,7 @@ export function Home() {
   })
 
   return (
-    <main>
+    <>
       <FormSearch />
       <TableRoot isLoading={isLoading}>
         <Table data={data} />
@@ -37,6 +37,6 @@ export function Home() {
           isFetchingNextPage={isFetchingNextPage}
         />
       </TableRoot>
-    </main>
+    </>
   )
 }
