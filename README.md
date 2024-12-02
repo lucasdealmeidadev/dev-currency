@@ -12,6 +12,7 @@ Encontre uma listagem completa das principais criptomoedas com preços e tendên
 * **[React Icons](https://react-icons.github.io/react-icons/)**
 * **[React Router](https://reactrouter.com/)**
 * **[Vite](https://vite.dev/)**
+* **[Tailwind CSS](https://tailwindcss.com/)**
 * **[TanStack Query](https://tanstack.com/query/v5/docs/framework/react/overview)**
 * **[Typescript](https://www.typescriptlang.org/)**
 
