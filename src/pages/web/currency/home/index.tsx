@@ -8,13 +8,13 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 export function Home() {
   const {
     data,
-    error,
+    //error,
     fetchNextPage,
     hasNextPage,
     isLoading,
-    isFetching,
+    //isFetching,
     isFetchingNextPage,
-    status,
+    //status,
   } = useInfiniteQuery({
     queryKey: ['coins'],
     queryFn: ({ pageParam }) => getCoins(pageParam),
