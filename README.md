@@ -1,4 +1,4 @@
-# Prime Flix
+# LACurrency
 
 ![Preview](https://github.com/lucasdealmeidadev/dev-currency/blob/main/lacurrency.png?raw=true)
 
@@ -11,6 +11,7 @@ Encontre uma listagem completa das principais criptomoedas com preços e tendên
 * **[React](https://pt-br.reactjs.org/)**
 * **[React Icons](https://react-icons.github.io/react-icons/)**
 * **[React Router](https://reactrouter.com/)**
+* **[Vite](https://vite.dev/)**
 * **[TanStack Query](https://tanstack.com/query/v5/docs/framework/react/overview)**
 * **[Typescript](https://www.typescriptlang.org/)**
 
