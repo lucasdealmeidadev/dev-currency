@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# Prime Flix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview](https://github.com/lucasdealmeidadev/dev-currency/blob/main/lacurrency.png?raw=true)
 
-Currently, two official plugins are available:
+Encontre uma listagem completa das principais criptomoedas com preços e tendências atualizadas. Simples, rápido e ideal para acompanhar o mercado!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Recursos utilizados
 
-## Expanding the ESLint configuration
+* **[API CoinCap](https://docs.coincap.io/)**
+* **[Biome](https://biomejs.dev/pt-br/)**
+* **[React](https://pt-br.reactjs.org/)**
+* **[React Icons](https://react-icons.github.io/react-icons/)**
+* **[React Router](https://reactrouter.com/)**
+* **[TanStack Query](https://tanstack.com/query/v5/docs/framework/react/overview)**
+* **[Typescript](https://www.typescriptlang.org/)**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🔥 Executando a aplicação no ambiente local
 
-- Configure the top-level `parserOptions` property like this:
+Caso você deseja executar o projeto na sua máquina local, basta seguir os passos abaixo:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 🌀 Começando... 
+
+Para começar, você deve simplesmente clonar o repositório do projeto na sua máquina e instalar as dependências.
+
+Abra o cmd (caso esteja utilizando o Windows) navegue até o local onde você clonou o projeto
+
+```
+cd "C:\Users\NomeDoComputador\Documents\cloneprojeto"
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Depois, quando estiver na pasta do projeto, basta digitar no cmd a seguinte instrução: **(dentro da pasta do projeto clonado)**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install
+```
+
+Ao digitar a instrução acima, automaticamente ele irá baixar todas as dependências listadas e definidas no arquivo package.json:
+
+* `node_modules` - que contêm os packages do npm que precisará para o projeto.
+
+#### 💨 Executando a aplicação 
+
+No diretório do projeto execute o camando abaixo para executar o projeto:
+
+```
+> npm run dev
+```
+
+## 🚩 Tenho dúvidas... O que fazer? 
+
+Caso tenham dúvidas sobre o código do projeto, sintam-se a vontade em abrir uma **[ISSUE AQUI](https://github.com/lucasdealmeidadev/dev-currency/issues)**. Assim que possível, estarei respondendo as todas as dúvidas que tiverem!
+
+## Licença
+
+* Licenciado sob a licença MIT - veja [LICENSE](https://github.com/lucasdealmeidadev/dev-currency/blob/main/LICENSE) para mais informações.
+
+----------
+
+Desenvolvido por Lucas de Almeida Monteiro (:  👋  [ Entrar em contato!!](https://www.linkedin.com/in/lucas-de-almeida-monteiro)
